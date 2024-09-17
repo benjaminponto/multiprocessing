@@ -4,7 +4,7 @@ import random
 
 #THIOS IS THE START OF A NEW BRANCH
 
-def matrix_multiplication():
+def matrix_multiplication(interations):
     #start of the program 
     start = time.time()
 
@@ -25,7 +25,7 @@ def matrix_multiplication():
 
 
     #anything more or less than a million iternations is kinda a waste of time.
-    for l in range(1,1000):
+    for l in range(1,interations):
         #interate through the rows of first matrix, x
         for i in range(len(X)):
             #interate through the columns of second matrix, y
@@ -42,8 +42,6 @@ def matrix_multiplication():
     #output the amount of time the program ran 
     print("Time taken in seconds: ", end-start)
 
-
-print(matrix_multiplication())
 
    
 
