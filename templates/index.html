@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrix Multiplication</title>
     <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .info-box {
+            position: absolute;
+            top: 300px;
+            right: 100px;
+            width: 300px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .info-box h2 {
+            margin-top: 0;
+            
+        }
+
         table {
             border-collapse: collapse;
             width: 50%;
@@ -23,6 +50,14 @@
     </style>
 </head>
 <body>
+    <div class="info-box">
+        <h2>About This App</h2>
+        <p>This application multiplies two random matricies, each element is between 1-9</p>
+        <p>The run time is then calculated and compared to a multi-core runtime to determin how much faster the multi-core runtime is</p>
+    </div>
+
+
+
     <h1>Matrix Multiplication</h1>
 
     <form method="post">
@@ -30,6 +65,12 @@
         <input type="number" id="iterations" name="iterations" value="1000" min="1">
         <button type="submit">Run Calculation</button>
     </form>
+    
+
+
+
+
+
 
     {% if X is not none %}
         <h2>Matrix X</h2>
