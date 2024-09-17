@@ -4,23 +4,24 @@ import random
 #start of the program 
 start = time.time()
 
-# 3x3 matrix
+# 3x3 matrix that selects a random number between 0 and 9
 X = [[random.randint(0,9),random.randint(0,9),random.randint(0,9)],
     [random.randint(0,9) ,random.randint(0,9),random.randint(0,9)],
     [random.randint(0,9) ,random.randint(0,9),random.randint(0,9)]]
 
-# 3x3 matrix
+# 3x3 matrix that selects a random number between 0 and 9
 y = [[random.randint(0,9),random.randint(0,9),random.randint(0,9)],
     [random.randint(0,9) ,random.randint(0,9),random.randint(0,9)],
     [random.randint(0,9) ,random.randint(0,9),random.randint(0,9)]]
 
+#here is where we will store the result of each calucaltion and the end.
 result = [[0,0,0],
          [0,0,0],
          [0,0,0]]
 
 
 #anything more or less than a million iternations is kinda a waste of time.
-for l in range(1,1000000):
+for l in range(1,1500000):
     #interate through the rows of first matrix, x
     for i in range(len(X)):
         #interate through the columns of second matrix, y
@@ -39,5 +40,5 @@ for r in result:
 end = time.time()
 
 
-#output the amount of time the program ran
+#output the amount of time the program ran 
 print("Time taken in seconds: ", end-start)
