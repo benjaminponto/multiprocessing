@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matrix Multiplication</title>
     <style>
+
+
+        .write-up{
+            position: absolute;
+            top: 20px;
+            width: 90%;
+            text-align: center;
+            
+        }
         body {
             font-family: Arial, Helvetica, sans-serif;
             margin: 0;
@@ -18,8 +27,8 @@
         }
         .info-box {
             position: absolute;
-            top: 300px;
-            right: 100px;
+            top: 20px;
+            right: 20px;
             width: 300px;
             padding: 15px;
             background-color: #f9f9f9;
@@ -55,7 +64,7 @@
         <p>This application multiplies two random matricies, each element is between 1-9</p>
         <p>The run time is then calculated and compared to a multi-core runtime to determin how much faster the multi-core runtime is</p>
     </div>
-
+   
 
 
     <h1>Matrix Multiplication</h1>
@@ -76,7 +85,7 @@
     <p>Time taken: {{ time_taken }} seconds</p>
     {% endif %}
 
-        {% if X2 is not none and X2.size > 0 %}
+        {% if y %}
     <h2>Optimized Method (NumPy)</h2>
     <p>Matrix X:</p>
     <pre>{{ X2 }}</pre>

@@ -2,9 +2,9 @@ import time
 import random
 import numpy as np 
 
-#THIOS IS THE START OF A NEW BRANCH
 
-def matrix_multiplication(interations):
+
+def matrix_multiplication(interation):
     #start of the program 
     start = time.time()
 
@@ -25,7 +25,7 @@ def matrix_multiplication(interations):
 
 
     #anything more or less than a million iternations is kinda a waste of time.
-    for l in range(1,interations):
+    for l in range(1,interation):
         #interate through the rows of first matrix, x
         for i in range(len(X)):
             #interate through the columns of second matrix, y
@@ -43,21 +43,21 @@ def matrix_multiplication(interations):
 
 
 
-def matrix_multiplication_optimized(interations):
+def matrix_multiplication_optimized(interation):
     start = time.time()
 
-    X = np.array([[1, 2],
-                 [3, 4]])
-    y = np.array([[5, 6],
-                 [7, 8]])
+    X = np.random.randint(0, 10, (3, 3))
+    y = np.random.randint(0, 10, (3, 3))
 
-    result = np.multiply(X,y)
+    result = np.zeros((3, 3), dtype=int)
 
+    for i in range(interation):
+        result += np.dot(X,y)
+        
     time_taken = time.time() - start
 
     return X, y, result, time_taken
 
-    print(matrix_multiplication_optimized(1000))
         
 
 
