@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from multi_processing import matrix_multiplication, matrix_multiplication_optimized
+import multiprocessing
 
 app = Flask(__name__)
 
@@ -15,7 +16,10 @@ def index():
 
         X, y, result, time_taken = matrix_multiplication(iteration)
 
-        X2, y2, result2, time_taken2 = matrix_multiplication_optimized(iteration)
+        p1 = multiprocessing.Process(target=matrix_multiplication_optimized, args=(iteration))
+        p1.start
+        p1.join
+        X2, y2, result2, time_taken2 = p1
 
 
         return render_template('index.html', X=X, y=y, result=result, time_taken=time_taken
