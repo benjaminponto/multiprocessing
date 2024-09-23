@@ -1,5 +1,6 @@
 import time
 import random
+from concurrent.futures import ProcessPoolExecutor
 
 
 #THIOS IS THE START OF A NEW BRANCH
@@ -39,10 +40,16 @@ def matrix_multiplication(interations):
     return X, y, result, time_taken
         
 
-    #output the amount of time the program ran 
-    print("Time taken in seconds: ", end-start)
+  
 
 
-   
 
-    
+def matrix_multiplication_optimized(interations):
+    start = time.time()
+
+
+        
+    time_taken = time.time() - start
+
+    return X, y, result, time_taken
+        
