@@ -1,6 +1,7 @@
 import time
 import random
 import numpy as np 
+from multiprocessing import Pool
 
 
 
@@ -40,19 +41,24 @@ def matrix_multiplication(interation):
         
 
   
+def multiply_row(args):
+    row, Y = args
+    return np.dot(row, Y)
 
-
-
+#optimized version of the matrix multiplication
 def matrix_multiplication_optimized(interation):
     start = time.time()
 
+
+    #here we use numpy library to generate random numbers for the matrix
     X = np.random.randint(0, 10, (3, 3))
     y = np.random.randint(0, 10, (3, 3))
 
-    result = np.zeros((3, 3), dtype=int)
+    result = np.zeros((3, 3), dtype=int) 
 
     for i in range(interation):
-        result += np.dot(X,y)
+        result += np.dot(X, y)
+
         
     time_taken = time.time() - start
 
