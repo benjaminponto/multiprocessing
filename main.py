@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-from multiprocessing import matrix_multiplication, matrix_multiplication_optimized
+from multi_processing import matrix_multiplication, matrix_multiplication_optimized
 
 app = Flask(__name__)
 

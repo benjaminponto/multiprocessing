@@ -1,7 +1,6 @@
 import time
 import random
-from concurrent.futures import ProcessPoolExecutor
-
+import numpy as np 
 
 #THIOS IS THE START OF A NEW BRANCH
 
@@ -47,9 +46,18 @@ def matrix_multiplication(interations):
 def matrix_multiplication_optimized(interations):
     start = time.time()
 
+    X = np.array([[1, 2],
+                 [3, 4]])
+    y = np.array([[5, 6],
+                 [7, 8]])
 
-        
+    result = np.multiply(X,y)
+
     time_taken = time.time() - start
 
     return X, y, result, time_taken
+
+    print(matrix_multiplication_optimized(1000))
         
+
+

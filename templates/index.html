@@ -76,7 +76,7 @@
     <p>Time taken: {{ time_taken }} seconds</p>
     {% endif %}
 
-    {% if X2 %}
+        {% if X2 is not none and X2.size > 0 %}
     <h2>Optimized Method (NumPy)</h2>
     <p>Matrix X:</p>
     <pre>{{ X2 }}</pre>
